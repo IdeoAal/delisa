@@ -1,0 +1,201 @@
+/********** Template CSS **********/
+:root {
+    --primary: #FFE468;
+    --secondary: #8CC641;
+    --light: #F2F2F2;
+    --dark: #272630;
+}
+
+.btn {
+    font-weight: 700;
+    transition: .5s;
+}
+
+.btn:hover {
+    -webkit-box-shadow: 0 8px 6px -6px #555555;
+    -moz-box-shadow: 0 8px 6px -6px #555555;
+    box-shadow: 0 8px 6px -6px #555555;
+}
+
+.btn.btn-secondary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 36px;
+    height: 36px;
+}
+
+.btn-sm-square {
+    width: 28px;
+    height: 28px;
+}
+
+.btn-lg-square {
+    width: 46px;
+    height: 46px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    position: relative;
+    margin-left: 30px;
+    padding: 35px 0;
+    font-size: 18px;
+    color: var(--light);
+    outline: none;
+    transition: .5s;
+}
+
+.sticky-top.navbar-dark .navbar-nav .nav-link {
+    padding: 20px 0;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+@media (min-width: 992px) {
+    .navbar-dark .navbar-nav .nav-link::before {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 5px;
+        bottom: 0;
+        left: 50%;
+        background: var(--primary);
+        transition: .5s;
+    }
+
+    .navbar-dark .navbar-nav .nav-link:hover::before,
+    .navbar-dark .navbar-nav .nav-link.active::before {
+        width: 100%;
+        left: 0;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .navbar-dark .navbar-nav .nav-link  {
+        margin-left: 0;
+        padding: 10px 0;
+    }
+}
+
+/* .bg-sma8 {
+    background: url(../img/sma8.jpg) top right no-repeat !important;
+    background-size: contain;
+}
+
+@media (max-width: 991.98px) {
+    .bg-sma8 {
+        background-size: cover;
+    }
+} */
+
+/* Background Hero */
+.hero-section {
+    background-image: url('../../assets/sma8.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* Opsional: overlay agar teks tetap terbaca */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.7); /* putih transparan */
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+.bg-footer {
+    background: url(../img/footer.jpg) center center no-repeat;
+    background-size: contain;
+}
+
+@media (max-width: 991.98px) {
+    .bg-call-to-action,
+    .bg-footer {
+        background-size: cover;
+    }
+}
+
+/*Glitch Effect .tombol-glc*/
+.tombol-glc, .tombol-glc::after {
+    padding: 10px 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #111;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.tombol-glc::after {
+    --move1: inset(50% 50% 50% 50%);
+    --move2: inset(31% 0 40% 0);
+    --move3: inset(39% 0 14% 0);
+    --move4: inset(45% 0 40% 0);
+    --move5: inset(45% 0 6% 0);
+    --move6: inset(14% 0 61% 0);
+    clip-path: var(--move1);
+    content: 'SUBMIT';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    color: white;
+    background-color: #111;
+}
+
+.tombol-glc:hover::after {
+    animation: glitch_4011 1s steps(2, end);
+    text-shadow: -3px -3px 0px #1df2f0, 3px 3px 0px #E94BE8;
+    border: 3px solid rgb(0, 255, 213);
+}
+
+.tombol-glc:hover {
+    text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #E94BE8;
+    border: 1px solid rgb(0, 255, 213);
+    box-shadow: 0px 0px 10px rgb(0, 255, 213);
+    background-color: #111;
+    color: white;
+}
+
+@keyframes glitch_4011 {
+    0% { clip-path: var(--move1); }
+    20% { clip-path: var(--move2); }
+    40% { clip-path: var(--move3); }
+    60% { clip-path: var(--move4); }
+    80% { clip-path: var(--move5); }
+    100% { clip-path: var(--move6); }
+}
+
